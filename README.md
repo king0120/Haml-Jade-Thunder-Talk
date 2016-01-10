@@ -1,10 +1,10 @@
 #Templating Languages
-##Haml, Jade
 
 Templating languages are used to beef up and organize your HTML code.  It makes writing html documents quick, easy, and clean.  Today I will be covering 2 of the most common options, Haml and Jade.
 
 
 ##Haml
+<img style="float: right;width: 150px;" src="http://haml.info/images/haml.png">
 
 Haml stands for HTML Abstraction Language and was created by Hampton Catlin in 2006.  (Fun fact, Hampton Catlin is also the creator of Sass!)
 
@@ -17,19 +17,19 @@ Haml is a replacement for erb.  It's syntax was built on the following principle
 
 ###Installation
  It's ridiculously easy to install haml.  Just install the gem with the following command.
- 
+
  `gem install haml`
 
 After you install haml, just use .haml at the end of your document name rather then .erb
- 
+
 ###Syntax
-Haml removes the need to close tags and use brackets in your html code.  
+Haml removes the need to close tags and use brackets in your html code.
 
 New tag:
 
 `%strong= item.title`
 
-this is the equivelant of 
+this is the equivelant of
 
 `<strong><%= item.title %></strong>`
 
@@ -38,25 +38,27 @@ If you are just putting in static HTML, you write the same thing, but just minus
 `%h3 Hello, World!`
 
 ###Attributes
-There are 3 ways to write out attributes in haml.  
+There are 3 ways to write out attributes in haml.
 `%a{:href => 'www.loremipsum.com', :class => 'links'}`
 
 or just write out the class or id.  Haml will automatically wrapp a <div> tag around it.
 `.you.can.even.put.in.multiple.classes.and#ids`
 
-Alternatively, you can wrap the attributes in parenthesis and write your attributes in HTMLs normal syntax 
+Alternatively, you can wrap the attributes in parenthesis and write your attributes in HTMLs normal syntax
 `%a(href='#' onclick='doSomething()')`
 
 ###Indentation
-Haml and other templating engines uses strict indentation rules to compile correctly.  This means that everything in your file should be nested correctly.  If you indent with 3 spaces where you should have used 2, Haml will fail to compile and throw an error. 
-
-%p This is an example.  <br>
-  %p This will work.	<br>
+Haml and other templating engines uses strict indentation rules to compile correctly.  This means that everything in your file should be nested correctly.  If you indent with 3 spaces where you should have used 2, Haml will fail to compile and throw an error.
+```haml
+%p This is an example.
+  %p This will work.
    %p This will not work.
-   
+```
+
+
 ###Filters
 The colon character tells haml to convert the indented block of text to a new language.  For example,
-```
+```haml
 :css
 	body{
 		font-family: helvetica;
@@ -76,7 +78,7 @@ This is useful for manipulating your css and javascript using your ruby code. He
 ###Partials
 Adding partials and combining multiple haml files is super easy.  all you have to do is include this in your file.
 
-``` 
+```haml
  = haml :file_name
 ```
 
@@ -87,20 +89,23 @@ You can combine this with other ruby code to cause certain conditions to call or
 
 `-#` is a Haml comment, and will not compile at all.
 
-It is possible to pass through unmodified HTML tags.  
+It is possible to pass through unmodified HTML tags.
 
 
 ##Jade
+<img style="float: right;width: 150px;" src="https://avatars0.githubusercontent.com/u/9338635?v=3&s=400">
 
 Jade is a templating engine for Node and Javascript.  It is very similar to Haml's syntax.  Jade gives users the ability to use Javascript within their markup files.  An example of its usefulness can be found here.
-```
+
+```jade
 - var authenticated = true
 body(class=authenticated ? 'authed' : 'anon')
 ```
 
 ###	Case
 Jade has it's own shorthand of the Javascript switch statement, that can be used to manipulate rendered HTML
-```
+
+```jade
 - var quantity = 2
 case quantity
 	when 0
@@ -111,9 +116,11 @@ case quantity
 	default
 		p Thanks for shopping!
 ```
+
 ###Includes
 You can include the contents of other files through this command.
-```
+
+```jade
 	include ./folder/something.html
 ```
 
@@ -127,6 +134,12 @@ Jade borrows inline string interpolation from Ruby.  You can wrap a javascript e
 
 
 ###Examples
-http://codepen.io/MyXoToD/pen/vdKsq?editors=110
+[Rows and Columns in Haml](http://codepen.io/MyXoToD/pen/vdKsq?editors=110)
 
-http://codepen.io/katydecorah/pen/xADtE?editors=100
+[Haml Clock](http://codepen.io/katydecorah/pen/xADtE?editors=100)
+
+
+###Resources
+[eRuby to Haml converter](http://html2haml.herokuapp.com/)
+[Haml Homepage](http://haml.info/)
+[Jade Homepage](http://jade-lang.com/)
