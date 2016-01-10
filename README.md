@@ -4,8 +4,8 @@ Templating languages are used to beef up and organize your HTML code.  It makes 
 
 
 ##Haml
-<img style="float: right;width: 150px;" src="http://haml.info/images/haml.png">
 
+<img align="right" src="http://haml.info/images/haml.png">
 Haml stands for HTML Abstraction Language and was created by Hampton Catlin in 2006.  (Fun fact, Hampton Catlin is also the creator of Sass!)
 
 Haml is a replacement for erb.  It's syntax was built on the following principles.
@@ -84,6 +84,7 @@ Adding partials and combining multiple haml files is super easy.  all you have t
 
 You can combine this with other ruby code to cause certain conditions to call or ignore haml files.
 
+
 ###Other Syntax
 `/` compiles into an HTML comment
 
@@ -93,7 +94,7 @@ It is possible to pass through unmodified HTML tags.
 
 
 ##Jade
-<img style="float: right;width: 150px;" src="https://avatars0.githubusercontent.com/u/9338635?v=3&s=400">
+<img align="right" width='150px' src="https://avatars0.githubusercontent.com/u/9338635?v=3&s=400">
 
 Jade is a templating engine for Node and Javascript.  It is very similar to Haml's syntax.  Jade gives users the ability to use Javascript within their markup files.  An example of its usefulness can be found here.
 
@@ -141,5 +142,8 @@ Jade borrows inline string interpolation from Ruby.  You can wrap a javascript e
 
 ###Resources
 [eRuby to Haml converter](http://html2haml.herokuapp.com/)
+
 [Haml Homepage](http://haml.info/)
+
 [Jade Homepage](http://jade-lang.com/)
+
