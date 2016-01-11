@@ -1,6 +1,6 @@
 #Templating Languages
 
-Templating languages are used to beef up and organize your HTML code.  It makes writing html documents quick, easy, and clean.  Today I will be covering 2 of the most common options, Haml and Jade.
+Templating languages are used to beef up and organize your HTML code. It makes writing websites quick, easy, and clean.  Today I will be covering 2 of the most common options, Haml and Jade.
 
 
 ##Haml
